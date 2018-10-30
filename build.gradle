@@ -1,0 +1,32 @@
+
+buildscript {
+    apply from: "$rootDir/common.gradle"
+    ext.build_gradle_version = '3.2.1'
+    repositories {
+        maven { url 'https://maven.fabric.io/public' }
+        maven { url 'https://maven.google.com' }
+        maven { url 'https://dl.google.com/dl/android/maven2' }
+        google()
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:$build_gradle_version"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVer"
+    }
+}
+
+allprojects {
+    repositories {
+        maven { url 'https://maven.fabric.io/public' }
+        maven { url 'https://maven.google.com' }
+        maven { url 'https://dl.google.com/dl/android/maven2' }
+        google()
+        mavenCentral()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

@@ -1,0 +1,90 @@
+apply plugin: 'com.android.library'
+apply from: '../common.gradle'
+
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    configurations.all {
+        resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+            def requested = details.requested
+            if (requested.name.startsWith('jsr305')) {
+                details.useVersion("$jsr305Ver")
+            }
+
+//            // 获取这个依赖组的名字是com.android.support
+//            if (requested.group == 'com.android.support') {
+//                // 且名字不是以multidex开头
+//                if (!requested.name.startsWith("multidex")) {
+//                    // 这里指定统一的版本号
+//                    details.useVersion("${supportVer}")
+//                }
+//            }
+
+
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    testImplementation testLib.junit
+    androidTestImplementation testLib.runner
+    androidTestImplementation testLib.espresso
+
+    implementation kotlinLib.kotlin_jdk
+
+    debugImplementation debugLib.debug_leak_canary
+    debugImplementation debugLib.debug_leak_canary_fragment
+    releaseImplementation debugLib.release_leak_canary
+
+    implementation supportLib.appcompat
+    implementation supportLib.vectorDrawable
+    implementation supportLib.cardView
+    implementation supportLib.customTabs
+    implementation supportLib.support_v4
+    implementation supportLib.support_v13
+    implementation supportLib.annotations
+    implementation supportLib.vectorDrawable
+    implementation supportLib.preference_v7
+    implementation supportLib.preference_v14
+    implementation supportLib.constraintLayout
+    implementation supportLib.multidex
+    implementation supportLib.recyclerView
+    implementation supportLib.design
+
+    implementation frescoLib.fresco
+    implementation frescoLib.frescoGif
+    implementation frescoLib.frescoWebp
+    implementation frescoLib.frescoWebpSupp
+
+    implementation googleLib.guava
+    implementation googleLib.gson
+
+    implementation squareupLib.okhttp3
+    implementation squareupLib.okio
+    implementation squareupLib.retrofit2
+
+    implementation reactivexLib.rxjava2
+    implementation reactivexLib.rxAndroid2
+
+    implementation thirdLib.flexible_adapter
+}

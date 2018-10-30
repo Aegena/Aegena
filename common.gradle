@@ -1,0 +1,101 @@
+ext {
+    build = [
+            minSDK      : 19,
+            targeSDK    : 28,
+            compileSDK  : 28,
+            buildTools  : '28.0.3',
+            version_name: '1.0.0',
+            version_code: 1,
+            package_name: 'com.campanula.demo'
+    ]
+
+    supportVer = "28.0.0"
+    constraintVer = "1.1.3"
+    multidexVer = "1.0.3"
+    supportLib = [
+            design          : "com.android.support:design:$supportVer",
+            recyclerView    : "com.android.support:recyclerview-v7:$supportVer",
+            cardView        : "com.android.support:cardview-v7:$supportVer",
+            appcompat       : "com.android.support:appcompat-v7:$supportVer",
+            customTabs      : "com.android.support:customtabs:$supportVer",
+            support_v4      : "com.android.support:support-v4:$supportVer",
+            support_v13     : "com.android.support:support-v13:$supportVer",
+            annotations     : "com.android.support:support-annotations:$supportVer",
+            vectorDrawable  : "com.android.support:support-vector-drawable:$supportVer",
+            preference_v7   : "com.android.support:preference-v7:$supportVer",
+            preference_v14  : "com.android.support:preference-v14:$supportVer",
+            constraintLayout: "com.android.support.constraint:constraint-layout:$constraintVer",
+            multidex        : "com.android.support:multidex:$multidexVer",
+    ]
+
+    kotlinVer = '1.2.71'
+    kotlinLib = [
+            kotlin_jdk: "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVer",
+    ]
+
+    frescoVer = "0.12.0"
+    frescoLib = [
+            fresco        : "com.facebook.fresco:fresco:$frescoVer",
+            frescoGif     : "com.facebook.fresco:animated-gif:$frescoVer",
+            frescoWebp    : "com.facebook.fresco:animated-webp:$frescoVer",
+            frescoWebpSupp: "com.facebook.fresco:webpsupport:$frescoVer",
+    ]
+
+    junitVer = "4.12"
+    runnerVer = "0.4"
+    espressoVer = "2.2.2"
+    testLib = [
+            junit   : "junit:junit:$junitVer",
+            runner  : "com.android.support.test:runner:$runnerVer",
+            espresso: "com.android.support.test.espresso:espresso-core:$espressoVer",
+    ]
+
+    rxJava2Ver = "2.1.9"
+    rxAndroid2Ver = "2.0.2"
+    reactivexLib = [
+            rxjava2   : "io.reactivex.rxjava2:rxjava:$rxJava2Ver",
+            rxAndroid2: "io.reactivex.rxjava2:rxandroid:$rxAndroid2Ver",
+    ]
+
+    okHttp3Ver = "3.8.0"
+    okIoVer = "1.14.0"
+    loggingInterceptorVer = "3.4.1"
+    retrofit2Ver = "2.3.0"
+    converterGsonVer = "2.3.0"
+    adapterRxJava2Ver = "2.3.0"
+
+    squareupLib = [
+            okhttp3            : "com.squareup.okhttp3:okhttp:$okHttp3Ver",
+            okio               : "com.squareup.okio:okio:$okIoVer",
+            logging_interceptor: "com.squareup.okhttp3:logging-interceptor:$loggingInterceptorVer",
+            retrofit2          : "com.squareup.retrofit2:retrofit:$retrofit2Ver",
+            converter_gson     : "com.squareup.retrofit2:converter-gson:$converterGsonVer",
+            converter_rxjava2  : "com.squareup.retrofit2:adapter-rxjava2:$adapterRxJava2Ver",
+
+    ]
+    leakCanaryVer = "1.6.2"
+    debugLib = [
+            debug_leak_canary         : "com.squareup.leakcanary:leakcanary-android:$leakCanaryVer",
+            release_leak_canary       : "com.squareup.leakcanary:leakcanary-android-no-op:$leakCanaryVer",
+            debug_leak_canary_fragment: "com.squareup.leakcanary:leakcanary-support-fragment:$leakCanaryVer"
+    ]
+
+    guavaVer = "24.0-android"
+    gsonVer = "2.8.2"
+    jsr305Ver = "2.0.1"
+    googleLib = [
+            guava : "com.google.guava:guava:$guavaVer",
+            gson  : "com.google.code.gson:gson:$gsonVer",
+            jsr305: "com.google.code.findbugs:jsr305:$jsr305Ver",
+    ]
+
+    flexibleAdapterVer = "5.0.0"
+    thirdLib = [
+            flexible_adapter: "eu.davidea:flexible-adapter:$flexibleAdapterVer",
+    ]
+    loggerVer = "2.2.0"
+    loggerLib = [
+            logger: "com.orhanobut:logger:$loggerVer"
+    ]
+
+}
