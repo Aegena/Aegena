@@ -1,4 +1,4 @@
-package com.campanula.common;
+package com.library.common;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

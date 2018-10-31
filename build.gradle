@@ -1,4 +1,3 @@
-
 buildscript {
     apply from: "$rootDir/common.gradle"
     ext.build_gradle_version = '3.2.1'
@@ -13,6 +12,8 @@ buildscript {
     dependencies {
         classpath "com.android.tools.build:gradle:$build_gradle_version"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVer"
+        classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:$jfrogVer"
+        classpath "com.github.dcendents:android-maven-gradle-plugin:$mavenVer"
     }
 }
 
@@ -25,8 +26,19 @@ allprojects {
         mavenCentral()
         jcenter()
     }
+
+    tasks.withType(Javadoc) {
+        options {
+            encoding "UTF-8"
+            charSet 'UTF-8'
+            links "http://docs.oracle.com/javase/7/docs/api"
+        }
+    }
+
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+

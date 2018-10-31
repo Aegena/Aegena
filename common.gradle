@@ -98,4 +98,7 @@ ext {
             logger: "com.orhanobut:logger:$loggerVer"
     ]
 
+    jfrogVer = "1.7.3"
+    mavenVer = "2.0"
+
 }

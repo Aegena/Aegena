@@ -1,4 +1,4 @@
-package com.campanula.demo;
+package com.library.demo;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.campanula.base.BaseActivity;
+import com.library.base.BaseActivity;
 
 import org.jetbrains.annotations.NotNull;
 

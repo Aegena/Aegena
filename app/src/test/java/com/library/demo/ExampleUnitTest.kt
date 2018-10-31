@@ -1,4 +1,4 @@
-package com.campanula.demo
+package com.library.demo
 
 import org.junit.Test
 

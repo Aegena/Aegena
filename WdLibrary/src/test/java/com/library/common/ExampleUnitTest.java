@@ -1,4 +1,4 @@
-package com.campanula.common;
+package com.library.common;
 
 import org.junit.Test;
 

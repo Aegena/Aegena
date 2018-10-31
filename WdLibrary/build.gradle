@@ -1,5 +1,8 @@
 apply plugin: 'com.android.library'
-apply from: '../common.gradle'
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+apply from: "$rootDir/common.gradle"
+
 
 android {
     compileSdkVersion 28
@@ -36,7 +39,6 @@ android {
 //                    details.useVersion("${supportVer}")
 //                }
 //            }
-
 
         }
     }
@@ -88,3 +90,6 @@ dependencies {
 
     implementation thirdLib.flexible_adapter
 }
+
+
+apply from: "$rootDir/WdLibrary/bintrayUpload.gradle"

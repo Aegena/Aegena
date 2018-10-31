@@ -1,4 +1,4 @@
-package com.campanula.demo
+package com.library.demo
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
