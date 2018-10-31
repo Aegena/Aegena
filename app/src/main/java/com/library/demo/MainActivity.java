@@ -9,8 +9,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.library.base.BaseActivity;
 
+import com.campanula.library.base.BaseActivity;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -23,11 +23,6 @@ public class MainActivity extends BaseActivity {
     RecyclerView mRecyclerView;
     ItemsAdapter mItemsAdapter;
 
-    @NotNull
-    @Override
-    protected String getPackagePath() {
-        return MainActivity.class.getSimpleName();
-    }
 
     @Override
     protected void bindViewData() {
@@ -45,6 +40,11 @@ public class MainActivity extends BaseActivity {
     @Override
     protected int getLayoutViewId() {
         return R.layout.main_activity;
+    }
+
+    @Override
+    protected String tag() {
+        return MainActivity.class.getSimpleName();
     }
 
 

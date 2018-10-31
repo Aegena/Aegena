@@ -89,6 +89,8 @@ dependencies {
     implementation reactivexLib.rxAndroid2
 
     implementation thirdLib.flexible_adapter
+
+    implementation loggerLib.logger
 }
 
 
