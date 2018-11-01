@@ -1,4 +1,4 @@
-package com.library.demo
+package com.library.angena
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4

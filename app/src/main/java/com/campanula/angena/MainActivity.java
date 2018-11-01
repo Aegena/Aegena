@@ -1,4 +1,4 @@
-package com.library.demo;
+package com.campanula.angena;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
@@ -11,7 +11,6 @@ import android.widget.TextView;
 
 
 import com.campanula.library.base.BaseActivity;
-import org.jetbrains.annotations.NotNull;
 
 /**
  * @author campanula
@@ -22,7 +21,6 @@ public class MainActivity extends BaseActivity {
 
     RecyclerView mRecyclerView;
     ItemsAdapter mItemsAdapter;
-
 
     @Override
     protected void bindViewData() {

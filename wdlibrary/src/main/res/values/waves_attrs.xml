@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="wave_alpha" format="integer"/>
+    <attr name="wave_color" format="color|reference"/>
+    <attr name="wave_width" format="integer"/>
+    <attr name="wave_height" format="integer"/>
+    <attr name="wave_duration" format="integer"/>
+    <declare-styleable name="Waves">
+        <attr name="wave_alpha"/>
+        <attr name="wave_color"/>
+        <attr name="wave_width"/>
+        <attr name="wave_height"/>
+        <attr name="wave_duration"/>
+    </declare-styleable>
+</resources>
