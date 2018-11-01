@@ -46,51 +46,53 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api fileTree(dir: 'libs', include: ['*.jar'])
 
     testImplementation testLib.junit
     androidTestImplementation testLib.runner
     androidTestImplementation testLib.espresso
 
-    implementation kotlinLib.kotlin_jdk
+    debugApi debugLib.debug_leak_canary
+    debugApi debugLib.debug_leak_canary_fragment
+    releaseApi debugLib.release_leak_canary
 
-    debugImplementation debugLib.debug_leak_canary
-    debugImplementation debugLib.debug_leak_canary_fragment
-    releaseImplementation debugLib.release_leak_canary
+    api kotlinLib.kotlin_jdk
+    api supportLib.appcompat
+    api supportLib.vectorDrawable
+    api supportLib.cardView
+    api supportLib.customTabs
+    api supportLib.support_v4
+    api supportLib.support_v13
+    api supportLib.annotations
+    api supportLib.vectorDrawable
+    api supportLib.preference_v7
+    api supportLib.preference_v14
+    api supportLib.constraintLayout
+    api supportLib.multidex
+    api supportLib.recyclerView
+    api supportLib.design
+    api frescoLib.fresco
+    api frescoLib.frescoGif
+    api frescoLib.frescoWebp
+    api frescoLib.frescoWebpSupp
+    api googleLib.guava
+    api googleLib.gson
+    api squareupLib.okhttp3
+    api squareupLib.okio
+    api squareupLib.retrofit2
+    api squareupLib.logging_interceptor
+    api squareupLib.converter_gson
+    api squareupLib.converter_rxjava2
+    api squareupLib.converter_jackson
+    api reactivexLib.rxjava2
+    api reactivexLib.rxAndroid2
+    api jacksonLib.code
+    api jacksonLib.annotations
+    api jacksonLib.databind
+    api thirdLib.flexible_adapter
+    api loggerLib.logger
 
-    implementation supportLib.appcompat
-    implementation supportLib.vectorDrawable
-    implementation supportLib.cardView
-    implementation supportLib.customTabs
-    implementation supportLib.support_v4
-    implementation supportLib.support_v13
-    implementation supportLib.annotations
-    implementation supportLib.vectorDrawable
-    implementation supportLib.preference_v7
-    implementation supportLib.preference_v14
-    implementation supportLib.constraintLayout
-    implementation supportLib.multidex
-    implementation supportLib.recyclerView
-    implementation supportLib.design
 
-    implementation frescoLib.fresco
-    implementation frescoLib.frescoGif
-    implementation frescoLib.frescoWebp
-    implementation frescoLib.frescoWebpSupp
-
-    implementation googleLib.guava
-    implementation googleLib.gson
-
-    implementation squareupLib.okhttp3
-    implementation squareupLib.okio
-    implementation squareupLib.retrofit2
-
-    implementation reactivexLib.rxjava2
-    implementation reactivexLib.rxAndroid2
-
-    implementation thirdLib.flexible_adapter
-
-    implementation loggerLib.logger
 }
 
 

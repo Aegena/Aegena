@@ -58,19 +58,21 @@ ext {
     ]
 
     okHttp3Ver = "3.8.0"
-    okIoVer = "1.14.0"
+    okioVer = "1.14.0"
     loggingInterceptorVer = "3.4.1"
     retrofit2Ver = "2.3.0"
     converterGsonVer = "2.3.0"
     adapterRxJava2Ver = "2.3.0"
+    converterJacksonVer = "2.4.0"
 
     squareupLib = [
             okhttp3            : "com.squareup.okhttp3:okhttp:$okHttp3Ver",
-            okio               : "com.squareup.okio:okio:$okIoVer",
+            okio               : "com.squareup.okio:okio:$okioVer",
             logging_interceptor: "com.squareup.okhttp3:logging-interceptor:$loggingInterceptorVer",
             retrofit2          : "com.squareup.retrofit2:retrofit:$retrofit2Ver",
             converter_gson     : "com.squareup.retrofit2:converter-gson:$converterGsonVer",
             converter_rxjava2  : "com.squareup.retrofit2:adapter-rxjava2:$adapterRxJava2Ver",
+            converter_jackson  : "com.squareup.retrofit2:converter-jackson:$converterJacksonVer",
 
     ]
     leakCanaryVer = "1.6.2"
@@ -89,6 +91,13 @@ ext {
             jsr305: "com.google.code.findbugs:jsr305:$jsr305Ver",
     ]
 
+    jacksonVer = "2.9.7"
+    jacksonLib = [
+            code       : "com.fasterxml.jackson.core:jackson-core:$jacksonVer",
+            annotations: "com.fasterxml.jackson.core:jackson-annotations:$jacksonVer",
+            databind   : "com.fasterxml.jackson.core:jackson-databind:$jacksonVer",
+    ]
+
     flexibleAdapterVer = "5.0.0"
     thirdLib = [
             flexible_adapter: "eu.davidea:flexible-adapter:$flexibleAdapterVer",
@@ -100,5 +109,6 @@ ext {
 
     jfrogVer = "1.7.3"
     mavenVer = "2.0"
+
 
 }
