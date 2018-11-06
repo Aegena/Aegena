@@ -74,7 +74,7 @@ public final class MathUtil {
      * @param link    斜率
      * @return 交点
      */
-    public static PointF[] getInsersectionPoints(PointF pMiddle, float radius, float link) {
+    public static PointF[] getIntersectionPoints(PointF pMiddle, float radius, float link) {
         PointF[] points = new PointF[2];
         float radian;
         float xOffset = radius;

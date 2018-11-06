@@ -1,8 +1,8 @@
-package com.campanula.angena.activity;
+package com.campanula.aegena.activity;
 
 import android.widget.SeekBar;
 
-import com.campanula.angena.R;
+import com.campanula.aegena.R;
 import com.campanula.library.base.BaseActivity;
 import com.campanula.library.widget.waves.Waves;
 

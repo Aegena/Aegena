@@ -1,4 +1,4 @@
-package com.campanula.angena.activity;
+package com.campanula.aegena.activity;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.campanula.angena.R;
+import com.campanula.aegena.R;
 import com.campanula.library.base.BaseActivity;
 
 /**
@@ -84,6 +84,7 @@ public class MainActivity extends BaseActivity {
                 public void onClick(View v) {
                     switch (i) {
                         case 0:
+                            viewHolder.itemView.getContext().startActivity(new Intent(viewHolder.itemView.getContext(), QQBezierActivity.class));
                             break;
                         case 1:
                             viewHolder.itemView.getContext().startActivity(new Intent(viewHolder.itemView.getContext(), WavesActivity.class));
