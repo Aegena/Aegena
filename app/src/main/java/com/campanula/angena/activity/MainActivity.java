@@ -1,5 +1,6 @@
-package com.campanula.angena;
+package com.campanula.angena.activity;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -9,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-
+import com.campanula.angena.R;
 import com.campanula.library.base.BaseActivity;
 
 /**
@@ -23,7 +24,7 @@ public class MainActivity extends BaseActivity {
     ItemsAdapter mItemsAdapter;
 
     @Override
-    protected void bindViewData() {
+    protected void bindData() {
         mItemsAdapter = new ItemsAdapter();
         mRecyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this, LinearLayoutManager.VERTICAL, false));
         mRecyclerView.setAdapter(mItemsAdapter);
@@ -31,13 +32,13 @@ public class MainActivity extends BaseActivity {
     }
 
     @Override
-    protected void findActivityViewById() {
+    protected void viewById() {
         mRecyclerView = findViewById(R.id.mRecyclerView);
     }
 
     @Override
     protected int getLayoutViewId() {
-        return R.layout.main_activity;
+        return R.layout.activity_main;
     }
 
     @Override
@@ -77,11 +78,18 @@ public class MainActivity extends BaseActivity {
         }
 
         @Override
-        public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
+        public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
             viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
+                    switch (i) {
+                        case 0:
+                            break;
+                        case 1:
+                            viewHolder.itemView.getContext().startActivity(new Intent(viewHolder.itemView.getContext(), WavesActivity.class));
+                            break;
+                        default:
+                    }
                 }
             });
             viewHolder.mTextView.setText(names[i]);

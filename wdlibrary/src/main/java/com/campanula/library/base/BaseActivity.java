@@ -21,19 +21,19 @@ public abstract class BaseActivity extends AppCompatActivity {
         TAG = tag();
         setRequestWindowFeature();
         setContentView(getLayoutViewId());
-        findActivityViewById();
-        bindViewData();
+        viewById();
+        bindData();
     }
 
     /**
      * 初始化控件数据
      */
-    protected abstract void bindViewData();
+    protected abstract void bindData();
 
     /**
      * 寻找当前页面的View
      */
-    protected abstract void findActivityViewById();
+    protected abstract void viewById();
 
     /**
      * 获取当前页面layout id

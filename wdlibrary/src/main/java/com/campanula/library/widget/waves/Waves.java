@@ -15,6 +15,7 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
+
 import com.campanula.library.R;
 
 /**
@@ -121,14 +122,14 @@ public class Waves extends View {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         this.viewHeight = getMeasuredHeight();
         this.viewWidth = getMeasuredWidth();
-
+        initWave();
     }
 
     private void initWave() {
-        float size = Math.round(this.viewWidth / this.waveWidth);
+        float size = Math.round(this.viewWidth / this.waveWidth / 2);
         size = resetSize(size);
-        this.waveSize = Math.round(size + 1.5);
-        this.baseLine = this.waveHeight / 2;
+        this.waveSize = Math.round(size + 1.5) + 1;
+        this.baseLine = this.viewHeight / 2;
     }
 
     @Override
