@@ -8,11 +8,11 @@ import android.annotation.TargetApi;
 import android.content.Context;
 import android.graphics.*;
 import android.os.Build;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.Nullable;
 import com.campanula.library.R;
 
 /**
@@ -242,7 +242,7 @@ public class DragView extends View {
     private void reAnimator() {
         switch (status) {
             case Status.STATE_DRAG:
-                ValueAnimator mValueAnimator = ValueAnimator.ofObject(new PointEvalutator(),
+                ValueAnimator mValueAnimator = ValueAnimator.ofObject(new PointEvaluator(),
                         new PointF(mDragPointF.x, mDragPointF.y), new PointF(mStickyPointF.x, mStickyPointF.y));
                 mValueAnimator.setDuration(300);
                 mValueAnimator.setInterpolator(new TimeInterpolator() {

@@ -11,7 +11,7 @@ android {
         targetSdkVersion build.targeSDK
         versionCode build.version_code
         versionName build.version_name
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         externalNativeBuild {
             cmake {
                 cppFlags "-frtti -fexceptions"
@@ -56,8 +56,8 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     testImplementation testLib.junit
-    androidTestImplementation testLib.runner
-    androidTestImplementation testLib.espresso
+    androidTestImplementation 'androidx.test:runner:1.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
 
     implementation project(path: ':wdlibrary')
 

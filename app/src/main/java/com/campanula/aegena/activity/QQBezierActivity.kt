@@ -1,16 +1,17 @@
 package com.campanula.aegena.activity
 
-import android.support.design.widget.TabLayout
-import android.support.v7.widget.DividerItemDecoration
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.campanula.aegena.R
 import com.campanula.library.base.BaseActivity
 import com.campanula.library.widget.qqbezier.QQBezierView
+import com.google.android.material.tabs.TabLayout
 
 /**
  * package com.campanula.aegena.activity
@@ -23,14 +24,18 @@ class QQBezierActivity : BaseActivity() {
     private lateinit var mTabLayout: TabLayout
     private lateinit var items: MutableList<String>
     private lateinit var mBezierAdapter: BezierAdapter
+
     override fun bindData() {
+
         items = arrayListOf()
+
         for (i in 0 until 100) {
             items.add(i, i.toString())
         }
+
         mBezierAdapter = BezierAdapter()
         mRecyclerView.adapter = mBezierAdapter
-        mRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        mRecyclerView.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
         mRecyclerView.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
 
     }

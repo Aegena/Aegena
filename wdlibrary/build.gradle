@@ -13,7 +13,7 @@ android {
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
     }
 
@@ -49,28 +49,28 @@ dependencies {
     api fileTree(dir: 'libs', include: ['*.jar'])
 
     testImplementation testLib.junit
-    androidTestImplementation testLib.runner
-    androidTestImplementation testLib.espresso
+    androidTestImplementation 'androidx.test:runner:1.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
 
     debugApi debugLib.debug_leak_canary
     debugApi debugLib.debug_leak_canary_fragment
     releaseApi debugLib.release_leak_canary
 
     api kotlinLib.kotlin_jdk
-    api supportLib.appcompat
-    api supportLib.vectorDrawable
-    api supportLib.cardView
-    api supportLib.customTabs
-    api supportLib.support_v4
-    api supportLib.support_v13
-    api supportLib.annotations
-    api supportLib.vectorDrawable
-    api supportLib.preference_v7
-    api supportLib.preference_v14
-    api supportLib.constraintLayout
-    api supportLib.multidex
-    api supportLib.recyclerView
-    api supportLib.design
+    api 'androidx.appcompat:appcompat:1.0.1'
+    api 'androidx.vectordrawable:vectordrawable:1.0.1'
+    api 'androidx.cardview:cardview:1.0.0'
+    api 'androidx.browser:browser:1.0.0'
+    api 'androidx.legacy:legacy-support-v4:1.0.0'
+    api 'androidx.legacy:legacy-support-v13:1.0.0'
+    api 'androidx.annotation:annotation:1.0.0'
+    api 'androidx.vectordrawable:vectordrawable:1.0.1'
+    api 'androidx.preference:preference:1.1.0-alpha01'
+    api 'androidx.legacy:legacy-preference-v14:1.0.0'
+    api 'androidx.constraintlayout:constraintlayout:2.0.0-alpha2'
+    api 'androidx.multidex:multidex:2.0.0'
+    api 'androidx.recyclerview:recyclerview:1.0.0'
+    api 'com.google.android.material:material:1.1.0-alpha01'
     api frescoLib.fresco
     api frescoLib.frescoGif
     api frescoLib.frescoWebp

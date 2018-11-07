@@ -1,96 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent">
 
     <com.campanula.library.widget.waves.Waves
-        android:id="@+id/mWaves"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        app:layout_constraintTop_toTopOf="parent" />
+            android:id="@+id/mWaves"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
-        android:id="@+id/mRedText"
-        android:layout_width="0dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="10dp"
-        android:gravity="center_vertical"
-        android:text="Red"
-        app:layout_constraintTop_toBottomOf="@id/mWaves"
-        app:layout_constraintWidth_percent=".15" />
+            android:id="@+id/mRedText"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:text="Red"
+            app:layout_constraintTop_toBottomOf="@id/mWaves"
+            app:layout_constraintWidth_percent=".15"/>
 
     <SeekBar
-        android:id="@+id/mRedSeekBar"
-        android:layout_width="0dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="10dp"
-        android:max="255"
-        android:progress="0"
-        app:layout_constraintLeft_toRightOf="@id/mRedText"
-        app:layout_constraintTop_toBottomOf="@id/mWaves"
-        app:layout_constraintWidth_percent=".85" />
+            android:id="@+id/mRedSeekBar"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:max="255"
+            android:progress="0"
+            app:layout_constraintLeft_toRightOf="@id/mRedText"
+            app:layout_constraintTop_toBottomOf="@id/mWaves"
+            app:layout_constraintWidth_percent=".85"/>
 
     <TextView
-        android:id="@+id/mGreenText"
-        android:layout_width="0dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="10dp"
-        android:gravity="center_vertical"
-        android:text="Green"
-        app:layout_constraintTop_toBottomOf="@id/mRedText"
-        app:layout_constraintWidth_percent=".15" />
+            android:id="@+id/mGreenText"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:text="Green"
+            app:layout_constraintTop_toBottomOf="@id/mRedText"
+            app:layout_constraintWidth_percent=".15"/>
 
     <SeekBar
-        android:id="@+id/mGreenSeekBar"
-        android:layout_width="0dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="10dp"
-        android:max="255"
-        android:progress="0"
-        app:layout_constraintLeft_toRightOf="@id/mGreenText"
-        app:layout_constraintTop_toBottomOf="@id/mRedSeekBar"
-        app:layout_constraintWidth_percent=".85" />
+            android:id="@+id/mGreenSeekBar"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:max="255"
+            android:progress="0"
+            app:layout_constraintLeft_toRightOf="@id/mGreenText"
+            app:layout_constraintTop_toBottomOf="@id/mRedSeekBar"
+            app:layout_constraintWidth_percent=".85"/>
 
     <TextView
-        android:id="@+id/mBlueText"
-        android:layout_width="0dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="10dp"
-        android:gravity="center_vertical"
-        android:text="Blue"
-        app:layout_constraintTop_toBottomOf="@id/mGreenText"
-        app:layout_constraintWidth_percent=".15" />
+            android:id="@+id/mBlueText"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:text="Blue"
+            app:layout_constraintTop_toBottomOf="@id/mGreenText"
+            app:layout_constraintWidth_percent=".15"/>
 
     <SeekBar
-        android:id="@+id/mBlueSeekBar"
-        android:layout_width="0dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="10dp"
-        android:max="255"
-        android:progress="0"
-        app:layout_constraintLeft_toRightOf="@id/mBlueText"
-        app:layout_constraintTop_toBottomOf="@id/mGreenSeekBar"
-        app:layout_constraintWidth_percent=".85" />
+            android:id="@+id/mBlueSeekBar"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:max="255"
+            android:progress="0"
+            app:layout_constraintLeft_toRightOf="@id/mBlueText"
+            app:layout_constraintTop_toBottomOf="@id/mGreenSeekBar"
+            app:layout_constraintWidth_percent=".85"/>
 
     <TextView
-        android:id="@+id/mAlphaText"
-        android:layout_width="0dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="10dp"
-        android:text="Alpha"
-        app:layout_constraintTop_toBottomOf="@id/mBlueText"
-        app:layout_constraintWidth_percent=".15" />
+            android:id="@+id/mAlphaText"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:text="Alpha"
+            app:layout_constraintTop_toBottomOf="@id/mBlueText"
+            app:layout_constraintWidth_percent=".15"/>
 
     <SeekBar
-        android:id="@+id/mAlphaSeekBar"
-        android:layout_width="0dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="10dp"
-        android:max="255"
-        android:progress="0"
-        app:layout_constraintLeft_toRightOf="@id/mAlphaText"
-        app:layout_constraintTop_toBottomOf="@id/mBlueSeekBar"
-        app:layout_constraintWidth_percent=".85" />
-</android.support.constraint.ConstraintLayout>
+            android:id="@+id/mAlphaSeekBar"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:max="255"
+            android:progress="0"
+            app:layout_constraintLeft_toRightOf="@id/mAlphaText"
+            app:layout_constraintTop_toBottomOf="@id/mBlueSeekBar"
+            app:layout_constraintWidth_percent=".85"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

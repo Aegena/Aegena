@@ -10,7 +10,7 @@ import android.graphics.PointF;
  * create 2018-11-01
  * desc
  **/
-public class PointEvalutator implements TypeEvaluator<PointF> {
+public class PointEvaluator implements TypeEvaluator<PointF> {
     @Override
     public PointF evaluate(float fraction, PointF startValue, PointF endValue) {
         float x = startValue.x + fraction * (endValue.x - startValue.x);

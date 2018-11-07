@@ -1,8 +1,7 @@
 package com.campanula.library.logger;
 
 
-import android.support.annotation.NonNull;
-import com.orhanobut.logger.AndroidLogAdapter;
+import androidx.annotation.NonNull;
 import com.orhanobut.logger.Logger;
 
 /**

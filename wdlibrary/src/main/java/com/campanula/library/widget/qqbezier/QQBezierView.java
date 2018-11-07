@@ -1,12 +1,11 @@
 package com.campanula.library.widget.qqbezier;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import androidx.appcompat.widget.AppCompatTextView;
 
 /**
  * package com.campanula.library.widget.qqbezier
