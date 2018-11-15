@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.campanula.aegena.R
@@ -25,6 +26,7 @@ class MainActivity : BaseActivity() {
         mItemsAdapter = ItemsAdapter()
         mRecyclerView.layoutManager = LinearLayoutManager(this@MainActivity, RecyclerView.VERTICAL, false)
         mRecyclerView.adapter = mItemsAdapter
+        mRecyclerView.addItemDecoration(DividerItemDecoration(this@MainActivity,RecyclerView.VERTICAL))
 
     }
 
@@ -47,9 +49,9 @@ class MainActivity : BaseActivity() {
     }
 
     class ItemsAdapter : RecyclerView.Adapter<ViewHolder>() {
-        var args = arrayOf("", "")
-        var names = arrayOf("QQ红点", "水波纹")
-        var icons = intArrayOf(R.mipmap.ic_launcher)
+        private val args = arrayOf("", "")
+        private val names = arrayOf("QQ红点", "水波纹")
+        private val icons = intArrayOf(R.mipmap.ic_launcher)
 
         override fun onCreateViewHolder(parent: ViewGroup, itemType: Int): ViewHolder {
             return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_main_activity, parent, false))

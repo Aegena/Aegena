@@ -36,7 +36,7 @@ android {
 //                // 且名字不是以multidex开头
 //                if (!requested.name.startsWith("multidex")) {
 //                    // 这里指定统一的版本号
-//                    details.useVersion("${supportVer}")
+//                    details.useVersion("${multidexVer}")
 //                }
 //            }
 
@@ -49,28 +49,29 @@ dependencies {
     api fileTree(dir: 'libs', include: ['*.jar'])
 
     testImplementation testLib.junit
-    androidTestImplementation 'androidx.test:runner:1.1.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+    androidTestImplementation testLib.runner
+    androidTestImplementation testLib.espresso
 
     debugApi debugLib.debug_leak_canary
     debugApi debugLib.debug_leak_canary_fragment
     releaseApi debugLib.release_leak_canary
 
     api kotlinLib.kotlin_jdk
-    api 'androidx.appcompat:appcompat:1.0.1'
-    api 'androidx.vectordrawable:vectordrawable:1.0.1'
-    api 'androidx.cardview:cardview:1.0.0'
-    api 'androidx.browser:browser:1.0.0'
-    api 'androidx.legacy:legacy-support-v4:1.0.0'
-    api 'androidx.legacy:legacy-support-v13:1.0.0'
-    api 'androidx.annotation:annotation:1.0.0'
-    api 'androidx.vectordrawable:vectordrawable:1.0.1'
-    api 'androidx.preference:preference:1.1.0-alpha01'
-    api 'androidx.legacy:legacy-preference-v14:1.0.0'
-    api 'androidx.constraintlayout:constraintlayout:2.0.0-alpha2'
-    api 'androidx.multidex:multidex:2.0.0'
-    api 'androidx.recyclerview:recyclerview:1.0.0'
-    api 'com.google.android.material:material:1.1.0-alpha01'
+
+    api androidxLib.appcompat
+    api androidxLib.vectorDrawable
+    api androidxLib.cardView
+    api androidxLib.browser
+    api androidxLib.legacySupportV4
+    api androidxLib.legacySupportV13
+    api androidxLib.legacyPreferenceV14
+    api androidxLib.annotations
+    api androidxLib.preference
+    api androidxLib.constraintLayout
+    api androidxLib.multidex
+    api androidxLib.recyclerView
+    api androidxLib.material
+
     api frescoLib.fresco
     api frescoLib.frescoGif
     api frescoLib.frescoWebp
@@ -96,4 +97,4 @@ dependencies {
 }
 
 
-apply from: "$rootDir/WdLibrary/bintrayUpload.gradle"
+apply from: "$rootDir/LibAegena/bintrayUpload.gradle"

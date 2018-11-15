@@ -42,7 +42,7 @@ android {
 //                // 且名字不是以multidex开头
 //                if (!requested.name.startsWith("multidex")) {
 //                    // 这里指定统一的版本号
-//                    details.useVersion("${supportVer}")
+//                    details.useVersion("${multidexVer}")
 //                }
 //            }
 
@@ -56,10 +56,10 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     testImplementation testLib.junit
-    androidTestImplementation 'androidx.test:runner:1.1.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+    androidTestImplementation testLib.runner
+    androidTestImplementation testLib.espresso
 
-    implementation project(path: ':wdlibrary')
+    implementation project(path: ':LibAegena')
 
 
 }

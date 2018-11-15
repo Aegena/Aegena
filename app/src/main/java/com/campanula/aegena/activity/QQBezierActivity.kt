@@ -49,7 +49,7 @@ class QQBezierActivity : BaseActivity() {
 
 
     override fun tag(): String {
-        return packageName
+        return QQBezierActivity::class.java.simpleName
     }
 
     class BezierHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

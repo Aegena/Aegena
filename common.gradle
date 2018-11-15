@@ -9,23 +9,34 @@ ext {
             package_name: 'com.campanula.angena'
     ]
 
-    supportVer = "28.0.0"
     constraintVer = "1.1.3"
-    multidexVer = "1.0.3"
-    supportLib = [
-            design          : "com.android.support:design:$supportVer",
-            recyclerView    : "com.android.support:recyclerview-v7:$supportVer",
-            cardView        : "com.android.support:cardview-v7:$supportVer",
-            appcompat       : "com.android.support:appcompat-v7:$supportVer",
-            customTabs      : "com.android.support:customtabs:$supportVer",
-            support_v4      : "com.android.support:support-v4:$supportVer",
-            support_v13     : "com.android.support:support-v13:$supportVer",
-            annotations     : "com.android.support:support-annotations:$supportVer",
-            vectorDrawable  : "com.android.support:support-vector-drawable:$supportVer",
-            preference_v7   : "com.android.support:preference-v7:$supportVer",
-            preference_v14  : "com.android.support:preference-v14:$supportVer",
-            constraintLayout: "com.android.support.constraint:constraint-layout:$constraintVer",
-            multidex        : "com.android.support:multidex:$multidexVer",
+    multidexVer = "2.0.0"
+    appcompatVer = "1.0.2"
+    vectordrawableVer = "1.0.1"
+    cardviewVer = "1.0.0"
+    annotationVer = "1.0.0"
+    preferenceVer = "1.1.0-alpha01"
+    constraintlayoutVer = "2.0.0-alpha2"
+    recyclerviewVer = "1.0.0"
+    materialVer = "1.1.0-alpha01"
+    legacySupportV4Ver = "1.0.0"
+    legacySupportV13Ver = "1.0.0"
+    legacyPreferenceV14Ver = "1.0.0"
+    browserVer = "1.0.0"
+    androidxLib = [
+            browser            : "androidx.browser:browser:$browserVer",
+            material           : "com.google.android.material:material:$materialVer",
+            recyclerView       : "androidx.recyclerview:recyclerview:$recyclerviewVer",
+            cardView           : "androidx.cardview:cardview:$cardviewVer",
+            appcompat          : "androidx.appcompat:appcompat:$appcompatVer",
+            annotations        : "androidx.annotation:annotation:$annotationVer",
+            vectorDrawable     : "androidx.vectordrawable:vectordrawable:$vectordrawableVer",
+            preference         : "androidx.preference:preference:$preferenceVer",
+            constraintLayout   : "androidx.constraintlayout:constraintlayout:$constraintlayoutVer",
+            multidex           : "androidx.multidex:multidex:$multidexVer",
+            legacySupportV4    : "androidx.legacy:legacy-support-v4:$legacySupportV4Ver",
+            legacySupportV13   : "androidx.legacy:legacy-support-v13:$legacySupportV13Ver",
+            legacyPreferenceV14: "androidx.legacy:legacy-preference-v14:$legacyPreferenceV14Ver",
     ]
 
     kotlinVer = '1.2.71'
@@ -42,12 +53,12 @@ ext {
     ]
 
     junitVer = "4.12"
-    runnerVer = "0.4"
-    espressoVer = "2.2.2"
+    runnerVer = "1.1.0"
+    espressoVer = "3.1.0"
     testLib = [
             junit   : "junit:junit:$junitVer",
-            runner  : "com.android.support.test:runner:$runnerVer",
-            espresso: "com.android.support.test.espresso:espresso-core:$espressoVer",
+            runner  : "androidx.test:runner:$runnerVer",
+            espresso: "androidx.test.espresso:espresso-core:$espressoVer",
     ]
 
     rxJava2Ver = "2.1.9"
@@ -73,7 +84,6 @@ ext {
             converter_gson     : "com.squareup.retrofit2:converter-gson:$converterGsonVer",
             converter_rxjava2  : "com.squareup.retrofit2:adapter-rxjava2:$adapterRxJava2Ver",
             converter_jackson  : "com.squareup.retrofit2:converter-jackson:$converterJacksonVer",
-
     ]
     leakCanaryVer = "1.6.2"
     debugLib = [
