@@ -1,6 +1,5 @@
 package com.campanula.library.utils;
 
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
@@ -11,7 +10,7 @@ import androidx.annotation.Nullable;
  * create 2018-10-31
  * desc
  **/
-public final class Utils {
+public final class NullUtils {
     /**
      * 非空检测校验
      *

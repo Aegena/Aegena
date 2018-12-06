@@ -14,9 +14,9 @@ import java.util.List;
 import java.util.Locale;
 
 /**
- * package com.campanula.library.utils
+ *      package com.campanula.library.utils
  *
- * @author 000286 create 2018-11-07 desc
+ *      @author 000286 create 2018-11-07 desc
  **/
 public final class JacksonUtils {
 

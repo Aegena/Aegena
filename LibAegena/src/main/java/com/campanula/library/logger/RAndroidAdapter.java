@@ -2,7 +2,7 @@ package com.campanula.library.logger;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import com.campanula.library.utils.Utils;
+import com.campanula.library.utils.NullUtils;
 import com.orhanobut.logger.FormatStrategy;
 import com.orhanobut.logger.PrettyFormatStrategy;
 
@@ -23,7 +23,7 @@ public class RAndroidAdapter implements RlogAdapter {
     }
 
     public RAndroidAdapter(@NonNull FormatStrategy formatStrategy) {
-        this.formatStrategy = Utils.checkNotNull(formatStrategy);
+        this.formatStrategy = NullUtils.checkNotNull(formatStrategy);
     }
 
     @Override

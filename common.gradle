@@ -40,6 +40,7 @@ ext {
     ]
 
     kotlinVer = '1.2.71'
+    kotlinPlusVer = '1.3.10'
     kotlinLib = [
             kotlin_jdk: "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVer",
     ]
@@ -119,6 +120,5 @@ ext {
 
     jfrogVer = "1.7.3"
     mavenVer = "2.0"
-
 
 }
