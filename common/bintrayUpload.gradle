@@ -1,5 +1,5 @@
-def siteUrl = 'https://github.com/icampanula/AndroidDemo'
-def gitUrl = 'https://github.com/icampanula/AndroidDemo.git'
+def siteUrl = 'https://github.com/Aegena/Aegena'
+def gitUrl = 'https://github.com/Aegena/Aegena.git'
 def jarVersion = '0.0.2'
 group = 'com.campanula.library'
 

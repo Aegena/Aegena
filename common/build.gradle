@@ -1,0 +1,100 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+apply from: "$rootDir/common.gradle"
+
+
+android {
+    compileSdkVersion builder.compileSDK
+
+    defaultConfig {
+        minSdkVersion builder.minSDK as int
+        targetSdkVersion builder.targeSDK as int
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    configurations.all {
+        resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+            def requested = details.requested
+            if (requested.name.startsWith('jsr305')) {
+                details.useVersion("$jsr305Ver")
+            }
+
+//            // 获取这个依赖组的名字是com.android.support
+//            if (requested.group == 'com.android.support') {
+//                // 且名字不是以multidex开头
+//                if (!requested.name.startsWith("multidex")) {
+//                    // 这里指定统一的版本号
+//                    details.useVersion("${multidexVer}")
+//                }
+//            }
+
+        }
+    }
+
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+
+    testImplementation test.junit
+    androidTestImplementation test.runner
+    androidTestImplementation test.espresso
+
+    debugApi debug.debug_leak_canary
+    debugApi debug.debug_leak_canary_fragment
+    releaseApi debug.release_leak_canary
+
+    api kotlin.kotlin_jdk
+
+    api androidx.appcompat
+    api androidx.vectorDrawable
+    api androidx.cardView
+    api androidx.browser
+    api androidx.legacySupportV4
+    api androidx.legacySupportV13
+    api androidx.legacyPreferenceV14
+    api androidx.annotations
+    api androidx.preference
+    api androidx.constraintLayout
+    api androidx.multidex
+    api androidx.recyclerView
+    api androidx.material
+
+    api fresco.fresco
+    api fresco.frescoGif
+    api fresco.frescoWebp
+    api fresco.frescoWebpSupp
+    api google.guava
+    api google.gson
+    api squareup.okhttp3
+    api squareup.okio
+    api squareup.retrofit2
+    api squareup.logging_interceptor
+    api squareup.converter_gson
+    api squareup.converter_rxjava2
+    api squareup.converter_jackson
+    api reactivex.rxjava2
+    api reactivex.rxAndroid2
+    api jackson.code
+    api jackson.annotations
+    api jackson.databind
+    api third.flexible_adapter
+    api  rootProject.ext.logger["logger"] //logger.logger
+
+
+}
+
+
+apply from: "$rootDir/common/bintrayUpload.gradle"

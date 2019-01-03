@@ -4,14 +4,15 @@ apply plugin: 'kotlin-android-extensions'
 apply from: "$rootDir/common.gradle"
 
 android {
-    compileSdkVersion build.compileSDK
+    compileSdkVersion builder.compileSDK
     defaultConfig {
-        applicationId build.package_name
-        minSdkVersion build.minSDK
-        targetSdkVersion build.targeSDK
-        versionCode build.version_code
-        versionName build.version_name
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        applicationId builder.package_name
+        minSdkVersion builder.minSDK
+        targetSdkVersion builder.targeSDK
+        versionCode builder.version_code
+        versionName builder.version_name
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner" 
+        multiDexEnabled true
         externalNativeBuild {
             cmake {
                 cppFlags "-frtti -fexceptions"
@@ -46,7 +47,6 @@ android {
 //                }
 //            }
 
-
         }
     }
 
@@ -55,11 +55,11 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    testImplementation testLib.junit
-    androidTestImplementation testLib.runner
-    androidTestImplementation testLib.espresso
+    testImplementation test.junit
+    androidTestImplementation test.runner
+    androidTestImplementation test.espresso
 
-    implementation project(path: ':LibAegena')
+    implementation project(path: ':common')
 
 
 }
