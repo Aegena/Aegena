@@ -1,4 +1,4 @@
-package com.campanula.library.logger;
+package com.campanula.logger;
 
 
 import androidx.annotation.NonNull;

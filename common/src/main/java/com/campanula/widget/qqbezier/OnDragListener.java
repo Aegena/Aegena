@@ -1,4 +1,4 @@
-package com.campanula.library.widget.qqbezier;
+package com.campanula.widget.qqbezier;
 
 /**
  * package com.campanula.library.widget.qqbezier

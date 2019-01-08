@@ -1,4 +1,4 @@
-package com.campanula.library.logger;
+package com.campanula.logger;
 
 import com.orhanobut.logger.LogAdapter;
 

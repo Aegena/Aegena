@@ -1,4 +1,4 @@
-package com.campanula.library.widget.qqbezier;
+package com.campanula.widget.qqbezier;
 
 import android.animation.TypeEvaluator;
 import android.graphics.PointF;

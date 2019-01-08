@@ -1,8 +1,8 @@
-package com.campanula.library.logger;
+package com.campanula.logger;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import com.campanula.library.utils.NullUtils;
+import com.campanula.utils.NullUtils;
 import com.orhanobut.logger.FormatStrategy;
 import com.orhanobut.logger.PrettyFormatStrategy;
 

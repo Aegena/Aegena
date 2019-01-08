@@ -1,4 +1,4 @@
-package com.campanula.library.https;
+package com.campanula.https;
 
 /**
  * package com.campanula.library

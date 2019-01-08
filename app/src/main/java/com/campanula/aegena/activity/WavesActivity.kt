@@ -3,8 +3,8 @@ package com.campanula.aegena.activity
 import android.widget.SeekBar
 
 import com.campanula.aegena.R
-import com.campanula.library.base.BaseActivity
-import com.campanula.library.widget.waves.Waves
+import com.campanula.base.BaseActivity
+import com.campanula.widget.waves.Waves
 
 /**
  * package com.campanula.aegena.activity
@@ -47,10 +47,10 @@ class WavesActivity : BaseActivity(), SeekBar.OnSeekBarChangeListener {
 
     override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
         when (seekBar.id) {
-            R.id.mBlueSeekBar -> mWaves!!.setBlue(progress)
-            R.id.mRedSeekBar -> mWaves!!.setRed(progress)
-            R.id.mGreenSeekBar -> mWaves!!.setGreenColor(progress)
-            R.id.mAlphaSeekBar -> mWaves!!.setAlpha(progress)
+            R.id.mBlueSeekBar -> mWaves.setBlue(progress)
+            R.id.mRedSeekBar -> mWaves.setRed(progress)
+            R.id.mGreenSeekBar -> mWaves.setGreenColor(progress)
+            R.id.mAlphaSeekBar -> mWaves.setAlpha(progress)
         }
     }
 

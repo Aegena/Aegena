@@ -1,4 +1,4 @@
-package com.campanula.library.widget.qqbezier;
+package com.campanula.widget.qqbezier;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -18,7 +18,7 @@ public class QQBezierView extends AppCompatTextView {
     private DragView mDragView;
     private float mWidth;
     private float mHeight;
-    private com.campanula.library.widget.qqbezier.OnDragListener mOnDragListener;
+    private com.campanula.widget.qqbezier.OnDragListener mOnDragListener;
 
     public QQBezierView(Context context) {
         this(context, null);
@@ -81,7 +81,7 @@ public class QQBezierView extends AppCompatTextView {
         return true;
     }
 
-    public void setOnDragListener(com.campanula.library.widget.qqbezier.OnDragListener mOnDragListener) {
+    public void setOnDragListener(com.campanula.widget.qqbezier.OnDragListener mOnDragListener) {
         this.mOnDragListener = mOnDragListener;
     }
 }

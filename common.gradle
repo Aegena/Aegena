@@ -114,11 +114,8 @@ ext {
             flexible_adapter: "eu.davidea:flexible-adapter:$flexibleAdapterVer",
     ]
     loggerVer = "2.2.0"
-    logger = [
+    loggerLib = [
             logger: "com.orhanobut:logger:$loggerVer"
     ]
-
-    jfrogVer = "1.7.3"
-    mavenVer = "2.0"
 
 }

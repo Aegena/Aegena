@@ -1,7 +1,7 @@
 package com.campanula.aegena.activity
 
 import com.campanula.aegena.R
-import com.campanula.library.base.BaseActivity
+import com.campanula.base.BaseActivity
 
 /**
  * package com.campanula.aegena.activity

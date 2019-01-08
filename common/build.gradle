@@ -1,6 +1,4 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
-apply plugin: 'com.jfrog.bintray'
 apply from: "$rootDir/common.gradle"
 
 
@@ -15,6 +13,10 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
+    }
+
+    lintOptions {
+        abortOnError false
     }
 
     buildTypes {
@@ -91,10 +93,7 @@ dependencies {
     api jackson.annotations
     api jackson.databind
     api third.flexible_adapter
-    api  rootProject.ext.logger["logger"] //logger.logger
+    implementation loggerLib.logger
 
 
 }
-
-
-apply from: "$rootDir/common/bintrayUpload.gradle"

@@ -1,4 +1,4 @@
-package com.campanula.library.widget.waves;
+package com.campanula.widget.waves;
 
 import android.animation.ValueAnimator;
 import android.annotation.TargetApi;

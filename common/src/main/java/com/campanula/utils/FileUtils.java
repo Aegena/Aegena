@@ -1,4 +1,4 @@
-package com.campanula.library.utils;
+package com.campanula.utils;
 
 /**
  * package com.campanula.library.utils

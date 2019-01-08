@@ -1,4 +1,4 @@
-package com.campanula.library.utils;
+package com.campanula.utils;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.JsonParser;

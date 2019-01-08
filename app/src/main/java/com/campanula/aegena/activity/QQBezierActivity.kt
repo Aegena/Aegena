@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.campanula.aegena.R
-import com.campanula.library.base.BaseActivity
-import com.campanula.library.widget.qqbezier.QQBezierView
+import com.campanula.base.BaseActivity
+import com.campanula.widget.qqbezier.QQBezierView
 import com.google.android.material.tabs.TabLayout
 
 /**

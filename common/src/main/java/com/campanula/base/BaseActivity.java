@@ -1,4 +1,4 @@
-package com.campanula.library.base;
+package com.campanula.base;
 
 import android.os.Bundle;
 import androidx.annotation.LayoutRes;

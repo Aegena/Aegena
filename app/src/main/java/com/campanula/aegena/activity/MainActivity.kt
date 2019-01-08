@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.campanula.aegena.R
-import com.campanula.library.base.BaseActivity
+import com.campanula.base.BaseActivity
 
 /**
  * @author campanula

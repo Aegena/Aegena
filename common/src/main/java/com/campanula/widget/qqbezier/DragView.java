@@ -1,4 +1,4 @@
-package com.campanula.library.widget.qqbezier;
+package com.campanula.widget.qqbezier;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -60,7 +60,7 @@ public class DragView extends View {
     };
     private Bitmap[] bitmaps;
 
-    private com.campanula.library.widget.qqbezier.OnDragListener mOnDragListener;
+    private com.campanula.widget.qqbezier.OnDragListener mOnDragListener;
     private View mView;
 
 
@@ -322,7 +322,7 @@ public class DragView extends View {
      *
      * @param mOnDragListener 监听事件
      */
-    public void setOnDragListener(com.campanula.library.widget.qqbezier.OnDragListener mOnDragListener) {
+    public void setOnDragListener(com.campanula.widget.qqbezier.OnDragListener mOnDragListener) {
         this.mOnDragListener = mOnDragListener;
     }
 
