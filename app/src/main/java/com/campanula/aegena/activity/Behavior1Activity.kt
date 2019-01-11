@@ -10,18 +10,16 @@ import com.campanula.base.BaseActivity
  * desc
  **/
 class Behavior1Activity : BaseActivity() {
-    override fun bindData() {
+    override fun initialize() {
 
     }
 
-    override fun viewById() {
-    }
 
     override fun getLayoutViewId(): Int {
         return R.layout.behavior1_acitivty
     }
 
-    override fun tag(): String {
+    override fun getTag(): String {
         return Behavior1Activity::class.java.simpleName
     }
 }

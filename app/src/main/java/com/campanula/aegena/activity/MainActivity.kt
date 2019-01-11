@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.campanula.aegena.R
 import com.campanula.base.BaseActivity
+import com.campanula.https.WaitDialog
 
 /**
  * @author campanula
@@ -18,28 +19,26 @@ import com.campanula.base.BaseActivity
  * @since
  */
 class MainActivity : BaseActivity() {
+    override fun initialize() {
+        mRecyclerView = findViewById(R.id.mRecyclerView)
+        mItemsAdapter = ItemsAdapter()
+        mRecyclerView.layoutManager = LinearLayoutManager(this@MainActivity, RecyclerView.VERTICAL, false)
+        mRecyclerView.adapter = mItemsAdapter
+        mRecyclerView.addItemDecoration(DividerItemDecoration(this@MainActivity, RecyclerView.VERTICAL))
+        val waitDialog: WaitDialog = WaitDialog(this)
+
+    }
+
+    override fun getTag(): String {
+        return MainActivity::class.java.simpleName
+    }
 
     lateinit var mRecyclerView: RecyclerView
     lateinit var mItemsAdapter: ItemsAdapter
 
-    override fun bindData() {
-        mItemsAdapter = ItemsAdapter()
-        mRecyclerView.layoutManager = LinearLayoutManager(this@MainActivity, RecyclerView.VERTICAL, false)
-        mRecyclerView.adapter = mItemsAdapter
-        mRecyclerView.addItemDecoration(DividerItemDecoration(this@MainActivity,RecyclerView.VERTICAL))
-
-    }
-
-    override fun viewById() {
-        mRecyclerView = findViewById(R.id.mRecyclerView)
-    }
 
     override fun getLayoutViewId(): Int {
         return R.layout.activity_main
-    }
-
-    override fun tag(): String {
-        return MainActivity::class.java.simpleName
     }
 
 

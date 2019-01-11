@@ -9,13 +9,13 @@
         android:supportsRtl="true"
         android:name=".App"
         android:theme="@style/AppTheme">
-        <activity android:name="com.campanula.aegena.activity.MainActivity">
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.campanula.aegena.activity.WavesActivity" />
-        <activity android:name="com.campanula.aegena.activity.QQBezierActivity" />
+        <activity android:name=".activity.WavesActivity" />
+        <activity android:name=".activity.QQBezierActivity" />
     </application>
 </manifest>

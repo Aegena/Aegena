@@ -14,17 +14,7 @@ import com.campanula.widget.waves.Waves
  * desc
  */
 class WavesActivity : BaseActivity(), SeekBar.OnSeekBarChangeListener {
-    private lateinit var mWaves: Waves
-    private lateinit var mRedSeekBar: SeekBar
-    private lateinit var mGreenSeekBar: SeekBar
-    private lateinit var mBlueSeekBar: SeekBar
-    private lateinit var mAlphaSeekBar: SeekBar
-
-    override fun bindData() {
-
-    }
-
-    override fun viewById() {
+    override fun initialize() {
         mWaves = findViewById(R.id.mWaves)
         mBlueSeekBar = findViewById(R.id.mBlueSeekBar)
         mRedSeekBar = findViewById(R.id.mRedSeekBar)
@@ -35,15 +25,25 @@ class WavesActivity : BaseActivity(), SeekBar.OnSeekBarChangeListener {
         mRedSeekBar.setOnSeekBarChangeListener(this)
         mGreenSeekBar.setOnSeekBarChangeListener(this)
         mAlphaSeekBar.setOnSeekBarChangeListener(this)
+
     }
+
+    override fun getTag(): String {
+        return WavesActivity::class.java.simpleName
+    }
+
+    private lateinit var mWaves: Waves
+    private lateinit var mRedSeekBar: SeekBar
+    private lateinit var mGreenSeekBar: SeekBar
+    private lateinit var mBlueSeekBar: SeekBar
+    private lateinit var mAlphaSeekBar: SeekBar
+
+
 
     override fun getLayoutViewId(): Int {
         return R.layout.activity_waves
     }
 
-    override fun tag(): String {
-        return WavesActivity::class.java.simpleName
-    }
 
     override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
         when (seekBar.id) {

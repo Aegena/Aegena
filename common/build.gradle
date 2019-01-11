@@ -74,10 +74,10 @@ dependencies {
     api androidx.recyclerView
     api androidx.material
 
-    api fresco.fresco
-    api fresco.frescoGif
-    api fresco.frescoWebp
-    api fresco.frescoWebpSupp
+    implementation fresco.fresco
+    implementation fresco.frescoGif
+    implementation fresco.frescoWebp
+    implementation fresco.frescoWebpSupp
     api google.guava
     api google.gson
     api squareup.okhttp3
@@ -92,7 +92,7 @@ dependencies {
     api jackson.code
     api jackson.annotations
     api jackson.databind
-    api third.flexible_adapter
+    implementation third.flexible_adapter
     implementation loggerLib.logger
 
 

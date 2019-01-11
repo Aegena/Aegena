@@ -14,9 +14,9 @@ import java.util.List;
 import java.util.Locale;
 
 /**
- *      package com.campanula.library.utils
+ * package com.campanula.library.utils
  *
- *      @author 000286 create 2018-11-07 desc
+ * @author 000286 create 2018-11-07 desc
  **/
 public final class JacksonUtils {
 
@@ -61,13 +61,22 @@ public final class JacksonUtils {
         return mObjectMapper.writeValueAsString(object);
     }
 
+    /**
+     * 任意字符串转换称List
+     *
+     * @param json  字符串
+     * @param clazz 转换的实体类
+     * @return  转换的实体
+     * @throws IOException  转换异常
+     */
     public static List<?> jsonConvertList(String json, Class<?> clazz) throws IOException {
         JavaType mJavaType = mObjectMapper.getTypeFactory().constructParametricType(List.class, clazz);
         return mObjectMapper.readValue(json, mJavaType);
     }
 
     public static void main(String[] args) {
-        System.out.println("VS Code");
+
+
     }
 
 }
