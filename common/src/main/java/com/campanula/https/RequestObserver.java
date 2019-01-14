@@ -7,6 +7,7 @@ import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 import org.jetbrains.annotations.NotNull;
 
+import java.lang.ref.WeakReference;
 import java.net.ConnectException;
 import java.net.UnknownHostException;
 import java.util.concurrent.TimeoutException;
@@ -19,20 +20,20 @@ import java.util.concurrent.TimeoutException;
  * since
  * desc
  **/
-public class BaseObserver<T> implements Observer<BaseResult<T>> {
+public class RequestObserver<T> implements Observer<BaseResult<T>> {
 
-    private Context mContext;
+    private WeakReference<Context> mContext;
     private ObserverListener mObserverListener;
     private RequestListener mRequestListener;
     private ProgressListener mProgressListener;
 
-    public BaseObserver(@NotNull ObserverListener mObserverListener, @NotNull RequestListener mRequestListener) {
+    public RequestObserver(@NotNull ObserverListener mObserverListener, @NotNull RequestListener mRequestListener) {
         this.mObserverListener = mObserverListener;
         this.mRequestListener = mRequestListener;
     }
 
-    public BaseObserver(@NotNull Context mContext, @NotNull RequestListener mRequestListener, @NotNull ProgressListener mProgressListener) {
-        this.mContext = mContext;
+    public RequestObserver(@NotNull Context mContext, @NotNull RequestListener mRequestListener, @NotNull ProgressListener mProgressListener) {
+        this.mContext = new WeakReference<>(mContext);
         this.mRequestListener = mRequestListener;
         this.mProgressListener = mProgressListener;
     }
@@ -42,6 +43,9 @@ public class BaseObserver<T> implements Observer<BaseResult<T>> {
         if (mObserverListener != null) {
             mObserverListener.onRequestStart();
         }
+        if (mProgressListener != null) {
+            mProgressListener.showProgressDialog();
+        }
     }
 
     @Override
@@ -49,6 +53,7 @@ public class BaseObserver<T> implements Observer<BaseResult<T>> {
         if (mObserverListener != null) {
             mObserverListener.onResponseEnd();
         }
+
         if (mBaseResult.isSuccess()) {
             try {
                 mRequestListener.onSuccees(mBaseResult.getResults());
@@ -65,22 +70,22 @@ public class BaseObserver<T> implements Observer<BaseResult<T>> {
             }
         }
 
+        if (mProgressListener != null) {
+            mProgressListener.closeProgressDialog();
+        }
     }
 
     @Override
     public void onError(Throwable e) {
+
         if (mObserverListener != null) {
             mObserverListener.onResponseEnd();
         }
+
         try {
-            if (e instanceof ConnectException
-                    || e instanceof TimeoutException
-                    || e instanceof NetworkErrorException
-                    || e instanceof UnknownHostException
-            ) {
-
+            if (e instanceof ConnectException || e instanceof TimeoutException || e instanceof NetworkErrorException
+                    || e instanceof UnknownHostException) {
                 mRequestListener.onFailure(e, true);
-
             } else {
                 mRequestListener.onFailure(e, false);
             }
@@ -88,6 +93,10 @@ public class BaseObserver<T> implements Observer<BaseResult<T>> {
             exception.printStackTrace();
             Logger.e(exception, "onError");
         }
+        if (mProgressListener != null) {
+            mProgressListener.onDismissListener();
+        }
+
     }
 
     @Override

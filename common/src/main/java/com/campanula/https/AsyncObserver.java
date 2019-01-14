@@ -8,7 +8,8 @@ package com.campanula.https;
  * since
  * desc
  **/
-public class AsyncObserverListener implements ObserverListener {
+public class AsyncObserver implements ObserverListener {
+
     @Override
     public void onRequestStart() {
 

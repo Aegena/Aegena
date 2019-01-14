@@ -16,4 +16,8 @@ public interface ProgressListener {
 
     void closeProgressDialog();
 
+    void setCancel(boolean cancelable);
+
+    void onDismissListener();
+    
 }

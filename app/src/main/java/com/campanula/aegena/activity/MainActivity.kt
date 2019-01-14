@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.campanula.aegena.R
 import com.campanula.base.BaseActivity
-import com.campanula.https.WaitDialog
+import com.campanula.https.DialogRequest
 
 /**
  * @author campanula
@@ -25,7 +25,7 @@ class MainActivity : BaseActivity() {
         mRecyclerView.layoutManager = LinearLayoutManager(this@MainActivity, RecyclerView.VERTICAL, false)
         mRecyclerView.adapter = mItemsAdapter
         mRecyclerView.addItemDecoration(DividerItemDecoration(this@MainActivity, RecyclerView.VERTICAL))
-        val waitDialog: WaitDialog = WaitDialog(this)
+        val waitDialog: DialogRequest = DialogRequest(this)
 
     }
 
