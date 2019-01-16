@@ -25,8 +25,6 @@ class MainActivity : BaseActivity() {
         mRecyclerView.layoutManager = LinearLayoutManager(this@MainActivity, RecyclerView.VERTICAL, false)
         mRecyclerView.adapter = mItemsAdapter
         mRecyclerView.addItemDecoration(DividerItemDecoration(this@MainActivity, RecyclerView.VERTICAL))
-        val waitDialog: DialogRequest = DialogRequest(this)
-
     }
 
     override fun getTag(): String {
@@ -49,7 +47,7 @@ class MainActivity : BaseActivity() {
 
     class ItemsAdapter : RecyclerView.Adapter<ViewHolder>() {
         private val args = arrayOf("", "")
-        private val names = arrayOf("QQ红点", "水波纹")
+        private val names = arrayOf("QQ红点", "水波纹", "Okhttp Retorfit Rxjava")
         private val icons = intArrayOf(R.mipmap.ic_launcher)
 
         override fun onCreateViewHolder(parent: ViewGroup, itemType: Int): ViewHolder {
@@ -69,6 +67,12 @@ class MainActivity : BaseActivity() {
                         Intent(
                             viewHolder.itemView.context,
                             WavesActivity::class.java
+                        )
+                    )
+                    2 -> viewHolder.itemView.context.startActivity(
+                        Intent(
+                            viewHolder.itemView.context,
+                            RequestActivity::class.java
                         )
                     )
                 }

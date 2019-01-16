@@ -1,11 +1,16 @@
 package com.campanula.https;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class BaseResult<T> {
 
     private static final int SUCCESS_CODE = 10000;
 
+    @JsonProperty
     private int code;
+    @JsonProperty
     private String message;
+    @JsonProperty
     private T results;
 
     private boolean success;

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">campanula</string>
+    <string name="request">request</string>
 </resources>

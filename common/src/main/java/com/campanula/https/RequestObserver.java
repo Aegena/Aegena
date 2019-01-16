@@ -27,6 +27,9 @@ public class RequestObserver<T> implements Observer<BaseResult<T>> {
     private RequestListener mRequestListener;
     private ProgressListener mProgressListener;
 
+    public RequestObserver() {
+    }
+
     public RequestObserver(@NotNull ObserverListener mObserverListener, @NotNull RequestListener mRequestListener) {
         this.mObserverListener = mObserverListener;
         this.mRequestListener = mRequestListener;
@@ -34,6 +37,13 @@ public class RequestObserver<T> implements Observer<BaseResult<T>> {
 
     public RequestObserver(@NotNull Context mContext, @NotNull RequestListener mRequestListener, @NotNull ProgressListener mProgressListener) {
         this.mContext = new WeakReference<>(mContext);
+        this.mRequestListener = mRequestListener;
+        this.mProgressListener = mProgressListener;
+    }
+
+    public RequestObserver(@NotNull Context mContext, @NotNull ObserverListener mObserverListener, @NotNull RequestListener mRequestListener, @NotNull ProgressListener mProgressListener) {
+        this.mContext = new WeakReference<>(mContext);
+        this.mObserverListener = mObserverListener;
         this.mRequestListener = mRequestListener;
         this.mProgressListener = mProgressListener;
     }

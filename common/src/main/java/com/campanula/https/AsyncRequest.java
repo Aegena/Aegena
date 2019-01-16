@@ -2,6 +2,7 @@ package com.campanula.https;
 
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
+import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.converter.jackson.JacksonConverterFactory;
 
 /**
@@ -22,20 +23,21 @@ public class AsyncRequest {
 
     public static Retrofit get() {
         if (mBaseUrl == null) {
-            mBaseUrl = "https://www.microsoftstore.com.cn";
+            mBaseUrl = "http://www.kuaidi100.com";
         }
         if (mRetrofit == null) {
             mRetrofit = new Retrofit.Builder()
                     .baseUrl(mBaseUrl)
                     .client(Client.get())
-                    .addConverterFactory(JacksonConverterFactory.create())
+//                    .addConverterFactory(JacksonConverterFactory.create())
+                    .addConverterFactory(GsonConverterFactory.create())
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .build();
         }
         return mRetrofit;
     }
 
-    public static <T> T get(Class<T> tClass) {
+    public static <T> T create(Class<T> tClass) {
         return get().create(tClass);
     }
 

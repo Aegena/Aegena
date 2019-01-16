@@ -59,6 +59,6 @@ public class DialogRequest extends Dialog implements ProgressListener {
 
     @Override
     public void onDismissListener() {
-
+        closeProgressDialog();
     }
 }

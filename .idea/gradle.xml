@@ -5,7 +5,6 @@
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleHome" value="D:/Gradle_REPO/wrapper/dists/gradle-5.0-all/4mxuau4c77thx8zlvtz4xiez7/gradle-5.0" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
@@ -13,8 +12,7 @@
             <option value="$PROJECT_DIR$/common" />
           </set>
         </option>
-        <option name="useAutoImport" value="true" />
-        <option name="useQualifiedModuleNames" value="true" />
+        <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
   </component>
