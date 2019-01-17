@@ -21,10 +21,12 @@ class RequestActivity : BaseActivity() {
         btn.setOnClickListener {
             Toast.makeText(this, "setOnClickListener", Toast.LENGTH_LONG).show()
 
-            Request.getInstance().setObservable(
-                Retrofits.create(HttpService::class.java)
-                    .getExpress("yuantong", "200382770316")
-            ).setObserverListener(null)
+            Request.getInstance()
+                .setObservable(
+                    Retrofits.create(HttpService::class.java)
+                        .getExpress("yuantong", "200382770316")
+                )
+                .setObserverListener(null)
                 .setProgressListener(DialogRequest(this))
                 .setRequestListener(null)
                 .with(this)

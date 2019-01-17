@@ -21,12 +21,13 @@ public class Request {
     private Request() {
     }
 
-    static class Singleton {
-        static Request mRequest = new Request();
-    }
+//    static class Singleton {
+//        static Request mRequest = new Request();
+//    }
 
     public static Request getInstance() {
-        return Singleton.mRequest;
+//        return Singleton.mRequest;
+        return new Request();
     }
 
     private Observable mObservable;
@@ -39,22 +40,26 @@ public class Request {
                 .unsubscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .map(new RxResult());
-        return getInstance();
+//        return getInstance();
+        return this;
     }
 
     public Request setObserverListener(ObserverListener mObserverListener) {
         this.mObserverListener = mObserverListener;
-        return getInstance();
+        //        return getInstance();
+        return this;
     }
 
     public Request setRequestListener(RequestListener mRequestListener) {
         this.mRequestListener = mRequestListener;
-        return getInstance();
+        //        return getInstance();
+        return this;
     }
 
     public Request setProgressListener(ProgressListener mProgressListener) {
         this.mProgressListener = mProgressListener;
-        return getInstance();
+        //        return getInstance();
+        return this;
     }
 
     public void with(Context mContext) {
@@ -63,14 +68,14 @@ public class Request {
             throw new RuntimeException("must init mObservable, you use setObservable method ");
         }
 
+
         this.mObservable.subscribe(
                 RequestObserver.newBuilder(mContext)
                         .setObserverListener(this.mObserverListener)
                         .setProgressListener(this.mProgressListener)
                         .setRequestListener(this.mRequestListener)
-                        .build()
+                        .build());
 
-        );
 
     }
 }
