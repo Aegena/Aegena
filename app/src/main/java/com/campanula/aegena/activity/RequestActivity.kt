@@ -7,8 +7,6 @@ import com.campanula.aegena.R
 import com.campanula.aegena.service.HttpService
 import com.campanula.base.BaseActivity
 import com.campanula.https.*
-import com.campanula.logger.Logger
-import java.util.*
 
 /**
  * package com.campanula.aegena.activity
@@ -23,29 +21,14 @@ class RequestActivity : BaseActivity() {
         btn.setOnClickListener {
             Toast.makeText(this, "setOnClickListener", Toast.LENGTH_LONG).show()
 
-            Request.getInstance()
-//                .with(this)
-                .setObservable(
-                    AsyncRequest.create(HttpService::class.java)
-                        .getExpress("yuantong", "200382770316")
-                ).setObserver(
-                    this,
-                    AsyncObserver(),
-                    object : RequestListener<List<Object>> {
-                        override fun onSuccees(results: List<Object>?) {
-                            Logger.e("result")
-                        }
+            Request.getInstance().setObservable(
+                Retrofits.create(HttpService::class.java)
+                    .getExpress("yuantong", "200382770316")
+            ).setObserverListener(null)
+                .setProgressListener(DialogRequest(this))
+                .setRequestListener(null)
+                .with(this)
 
-                        override fun onError(message: String?, code: Int) {
-                            Logger.e("result  " + message)
-                        }
-
-                        override fun onFailure(e: Throwable?, isNetWorkError: Boolean) {
-                            Logger.e("result  " + e?.message)
-                        }
-                    },
-                    DialogRequest(this)
-                )
         }
     }
 

@@ -10,7 +10,7 @@ package com.campanula.https;
  **/
 public interface RequestListener<T> {
 
-    void onSuccees(T results) throws Exception;
+    void onSuccess(T results) throws Exception;
 
     void onError(String message, int code) throws Exception;
 

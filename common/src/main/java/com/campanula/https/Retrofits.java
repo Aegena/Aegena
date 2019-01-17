@@ -3,7 +3,6 @@ package com.campanula.https;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
-import retrofit2.converter.jackson.JacksonConverterFactory;
 
 /**
  * package com.campanula.library
@@ -12,9 +11,9 @@ import retrofit2.converter.jackson.JacksonConverterFactory;
  * create 2018-11-15
  * desc
  **/
-public class AsyncRequest {
+public class Retrofits {
 
-    private AsyncRequest() {
+    private Retrofits() {
     }
 
     private static String mBaseUrl;
@@ -28,8 +27,8 @@ public class AsyncRequest {
         if (mRetrofit == null) {
             mRetrofit = new Retrofit.Builder()
                     .baseUrl(mBaseUrl)
-                    .client(Client.get())
-//                    .addConverterFactory(JacksonConverterFactory.create())
+                    .client(OkHttpClient.get())
+//                  .addConverterFactory(JacksonConverterFactory.create())
                     .addConverterFactory(GsonConverterFactory.create())
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .build();
@@ -43,11 +42,11 @@ public class AsyncRequest {
 
 
     public static void setBaseUrl(String mBaseUrl) {
-        AsyncRequest.mBaseUrl = mBaseUrl;
+        Retrofits.mBaseUrl = mBaseUrl;
         setRetrofit(null);
     }
 
-    public static void setRetrofit(Retrofit mRetrofit) {
-        AsyncRequest.mRetrofit = mRetrofit;
+    static void setRetrofit(Retrofit mRetrofit) {
+        Retrofits.mRetrofit = mRetrofit;
     }
 }

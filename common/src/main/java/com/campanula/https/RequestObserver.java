@@ -27,32 +27,22 @@ public class RequestObserver<T> implements Observer<BaseResult<T>> {
     private RequestListener mRequestListener;
     private ProgressListener mProgressListener;
 
-    public RequestObserver() {
+
+    public RequestObserver(Builder mBuilder) {
+        this.mContext = mBuilder.mContext;
+        this.mObserverListener = mBuilder.mObserverListener;
+        this.mProgressListener = mBuilder.mProgressListener;
+        this.mRequestListener = mBuilder.mRequestListener;
+
     }
 
-    public RequestObserver(@NotNull ObserverListener mObserverListener, @NotNull RequestListener mRequestListener) {
-        this.mObserverListener = mObserverListener;
-        this.mRequestListener = mRequestListener;
-    }
-
-    public RequestObserver(@NotNull Context mContext, @NotNull RequestListener mRequestListener, @NotNull ProgressListener mProgressListener) {
-        this.mContext = new WeakReference<>(mContext);
-        this.mRequestListener = mRequestListener;
-        this.mProgressListener = mProgressListener;
-    }
-
-    public RequestObserver(@NotNull Context mContext, @NotNull ObserverListener mObserverListener, @NotNull RequestListener mRequestListener, @NotNull ProgressListener mProgressListener) {
-        this.mContext = new WeakReference<>(mContext);
-        this.mObserverListener = mObserverListener;
-        this.mRequestListener = mRequestListener;
-        this.mProgressListener = mProgressListener;
+    public static Builder newBuilder(Context mContext) {
+        return new Builder(mContext);
     }
 
     @Override
     public void onSubscribe(Disposable d) {
-        if (mObserverListener != null) {
-            mObserverListener.onRequestStart();
-        }
+        mObserverListener.onRequestStart();
         if (mProgressListener != null) {
             mProgressListener.showProgressDialog();
         }
@@ -60,13 +50,10 @@ public class RequestObserver<T> implements Observer<BaseResult<T>> {
 
     @Override
     public void onNext(BaseResult<T> mBaseResult) {
-        if (mObserverListener != null) {
-            mObserverListener.onResponseEnd();
-        }
-
+        mObserverListener.onResponseEnd();
         if (mBaseResult.isSuccess()) {
             try {
-                mRequestListener.onSuccees(mBaseResult.getResults());
+                mRequestListener.onSuccess(mBaseResult.getResults());
             } catch (Exception e) {
                 e.printStackTrace();
                 Logger.e(e, "success");
@@ -79,19 +66,14 @@ public class RequestObserver<T> implements Observer<BaseResult<T>> {
                 Logger.e(e, "error");
             }
         }
-
         if (mProgressListener != null) {
-            mProgressListener.closeProgressDialog();
+            mProgressListener.onDismissListener();
         }
     }
 
     @Override
     public void onError(Throwable e) {
-
-        if (mObserverListener != null) {
-            mObserverListener.onResponseEnd();
-        }
-
+        mObserverListener.onResponseEnd();
         try {
             if (e instanceof ConnectException || e instanceof TimeoutException || e instanceof NetworkErrorException
                     || e instanceof UnknownHostException) {
@@ -106,12 +88,74 @@ public class RequestObserver<T> implements Observer<BaseResult<T>> {
         if (mProgressListener != null) {
             mProgressListener.onDismissListener();
         }
-
     }
 
     @Override
     public void onComplete() {
 
+    }
+
+    public static final class Builder {
+        WeakReference<Context> mContext;
+        ObserverListener mObserverListener;
+        RequestListener mRequestListener;
+        ProgressListener mProgressListener;
+
+        public Builder(Context mContext) {
+            this.mContext = new WeakReference<>(mContext);
+        }
+
+        public Builder setObserverListener(ObserverListener mObserverListener) {
+            this.mObserverListener = mObserverListener;
+            return this;
+        }
+
+        public Builder setRequestListener(RequestListener mRequestListener) {
+            this.mRequestListener = mRequestListener;
+            return this;
+        }
+
+        public Builder setProgressListener(ProgressListener mProgressListener) {
+            this.mProgressListener = mProgressListener;
+            return this;
+        }
+
+
+        public RequestObserver build() {
+            if (mObserverListener == null) {
+                this.mObserverListener = new ObserverListener() {
+                    @Override
+                    public void onRequestStart() {
+                        Logger.i("onRequestStart");
+                    }
+
+                    @Override
+                    public void onResponseEnd() {
+                        Logger.i("onResponseEnd");
+                    }
+                };
+            }
+
+            if (mRequestListener == null) {
+                this.mRequestListener = new RequestListener() {
+                    @Override
+                    public void onSuccess(Object results) throws Exception {
+                        Logger.i("success");
+                    }
+
+                    @Override
+                    public void onError(String message, int code) throws Exception {
+                        Logger.i(message, code);
+                    }
+
+                    @Override
+                    public void onFailure(Throwable e, boolean isNetWorkError) throws Exception {
+                        Logger.i(e.getMessage(), isNetWorkError);
+                    }
+                };
+            }
+            return new RequestObserver(this);
+        }
     }
 
 
