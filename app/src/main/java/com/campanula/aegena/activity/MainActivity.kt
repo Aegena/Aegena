@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.campanula.aegena.R
 import com.campanula.base.BaseActivity
-import com.campanula.https.DialogRequest
 
 /**
  * @author campanula

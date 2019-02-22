@@ -2,7 +2,7 @@ package com.campanula.https;
 
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
-import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.converter.jackson.JacksonConverterFactory;
 
 /**
  * package com.campanula.library
@@ -11,9 +11,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * create 2018-11-15
  * desc
  **/
-public class Retrofits {
+public class RetrofitClient {
 
-    private Retrofits() {
+    private RetrofitClient() {
     }
 
     private static String mBaseUrl;
@@ -28,8 +28,8 @@ public class Retrofits {
             mRetrofit = new Retrofit.Builder()
                     .baseUrl(mBaseUrl)
                     .client(OkHttpClient.get())
-//                  .addConverterFactory(JacksonConverterFactory.create())
-                    .addConverterFactory(GsonConverterFactory.create())
+                    .addConverterFactory(JacksonConverterFactory.create())
+//                    .addConverterFactory(GsonConverterFactory.create())
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .build();
         }
@@ -42,11 +42,11 @@ public class Retrofits {
 
 
     public static void setBaseUrl(String mBaseUrl) {
-        Retrofits.mBaseUrl = mBaseUrl;
+        RetrofitClient.mBaseUrl = mBaseUrl;
         setRetrofit(null);
     }
 
     static void setRetrofit(Retrofit mRetrofit) {
-        Retrofits.mRetrofit = mRetrofit;
+        RetrofitClient.mRetrofit = mRetrofit;
     }
 }

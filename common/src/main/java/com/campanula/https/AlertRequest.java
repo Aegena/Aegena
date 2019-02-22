@@ -15,13 +15,13 @@ import com.campanula.library.R;
  * since
  * desc
  **/
-public class DialogRequest extends Dialog implements ProgressListener {
+public class AlertRequest extends Dialog implements ProgressListener {
 
     private ProgressBar pb;
     private TextView tip;
     private CharSequence message;
 
-    public DialogRequest(Context context) {
+    public AlertRequest(Context context) {
         super(context);
         setContentView(R.layout.dialog_async);
         pb = findViewById(R.id.pb);

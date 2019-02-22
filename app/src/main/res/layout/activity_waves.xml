@@ -5,7 +5,7 @@
                                                    android:layout_width="match_parent"
                                                    android:layout_height="match_parent">
 
-    <com.campanula.library.widget.waves.Waves
+    <com.campanula.widget.waves.Waves
             android:id="@+id/mWaves"
             android:layout_width="match_parent"
             android:layout_height="80dp"

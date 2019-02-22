@@ -10,13 +10,13 @@ import io.reactivex.functions.Function;
  * since
  * desc
  **/
-public class RxResult<T> implements Function<BaseResult<T>, T> {
+public class RxResult<T extends BaseResult> implements Function<T, T> {
     @Override
-    public T apply(BaseResult<T> result) {
-        if (result.isSuccess()) {
-            return result.getResults();
+    public T apply(T result) {
+        if (result.success()) {
+            return result;
         } else {
-            throw new RuntimeException("request error(code = " + result.getCode() + " , message = " + result.isSuccess() + ")");
+            throw new RuntimeException(" request  error ");
         }
     }
 }

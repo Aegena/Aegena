@@ -1,6 +1,6 @@
 package com.campanula.aegena.service;
 
-import com.campanula.https.BaseResult;
+import com.campanula.aegena.model.BaseModel;
 import io.reactivex.Observable;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
@@ -17,6 +17,6 @@ import java.util.List;
 public interface HttpService {
 
     @GET("/query")
-    Observable<BaseResult<List<Object>>> getExpress(@Query("type") String type, @Query("postid") String postid);
+    Observable<BaseModel<List<Object>>> getExpress(@Query("type") String type, @Query("postid") String postid);
 
 }

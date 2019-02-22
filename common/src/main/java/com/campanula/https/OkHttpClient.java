@@ -59,7 +59,7 @@ public class OkHttpClient {
 
     public static void setOkHttpClient(okhttp3.OkHttpClient mOkHttpClient) {
         OkHttpClient.mOkHttpClient = mOkHttpClient;
-        Retrofits.setRetrofit(null);
+        RetrofitClient.setRetrofit(null);
     }
 
     public static void setHeaderInterceptor(Interceptor mHeaderInterceptor) {

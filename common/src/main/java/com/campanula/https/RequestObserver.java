@@ -5,7 +5,6 @@ import android.content.Context;
 import com.campanula.logger.Logger;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
-import org.jetbrains.annotations.NotNull;
 
 import java.lang.ref.WeakReference;
 import java.net.ConnectException;
@@ -20,7 +19,7 @@ import java.util.concurrent.TimeoutException;
  * since
  * desc
  **/
-public class RequestObserver<T> implements Observer<BaseResult<T>> {
+public class RequestObserver<T extends BaseResult> implements Observer<T> {
 
     private WeakReference<Context> mContext;
     private ObserverListener mObserverListener;
@@ -49,18 +48,19 @@ public class RequestObserver<T> implements Observer<BaseResult<T>> {
     }
 
     @Override
-    public void onNext(BaseResult<T> mBaseResult) {
+    public void onNext(T mBaseResult) {
         mObserverListener.onResponseEnd();
-        if (mBaseResult.isSuccess()) {
+        if (mBaseResult.success()) {
             try {
-                mRequestListener.onSuccess(mBaseResult.getResults());
+                mRequestListener.onSuccess(mBaseResult.getData());
+
             } catch (Exception e) {
                 e.printStackTrace();
                 Logger.e(e, "success");
             }
         } else {
             try {
-                mRequestListener.onError(mBaseResult.getMessage(), mBaseResult.getCode());
+                mRequestListener.onError(mBaseResult.message());
             } catch (Exception e) {
                 e.printStackTrace();
                 Logger.e(e, "error");
@@ -144,8 +144,8 @@ public class RequestObserver<T> implements Observer<BaseResult<T>> {
                     }
 
                     @Override
-                    public void onError(String message, int code) throws Exception {
-                        Logger.i(message, code);
+                    public void onError(String message) throws Exception {
+                        Logger.i(message);
                     }
 
                     @Override

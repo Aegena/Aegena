@@ -23,11 +23,11 @@ class RequestActivity : BaseActivity() {
 
             Request.getInstance()
                 .setObservable(
-                    Retrofits.create(HttpService::class.java)
+                    RetrofitClient.create(HttpService::class.java)
                         .getExpress("yuantong", "200382770316")
                 )
                 .setObserverListener(null)
-                .setProgressListener(DialogRequest(this))
+                .setProgressListener(AlertRequest(this))
                 .setRequestListener(null)
                 .with(this)
 
