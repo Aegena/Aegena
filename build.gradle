@@ -1,6 +1,6 @@
 buildscript {
     apply from: "$rootDir/common.gradle"
-    ext.build_gradle_version = '3.3.1'
+    ext.build_gradle_version = '3.4.0'
     repositories {
         maven { url 'https://maven.fabric.io/public' }
         maven { url 'https://maven.google.com' }
@@ -10,7 +10,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:$build_gradle_version"
+        classpath "com.android.tools.build:gradle:${build_gradle_version}"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinPluginVer"
     }
 }

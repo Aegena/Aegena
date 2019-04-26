@@ -48,18 +48,14 @@ android {
 }
 
 dependencies {
-    api fileTree(dir: 'libs', include: ['*.jar'])
-
+    api fileTree(include: ['*.jar'], dir: 'libs')
     testImplementation test.junit
     androidTestImplementation test.runner
     androidTestImplementation test.espresso
-
-    debugApi debug.debug_leak_canary
-    debugApi debug.debug_leak_canary_fragment
-    releaseApi debug.release_leak_canary
-
+    debugApi leakcanary.android
+    debugApi leakcanary.support_fragment
+    releaseApi leakcanary.android_no_op
     api kotlin.kotlin_jdk
-
     api androidx.appcompat
     api androidx.vectorDrawable
     api androidx.cardView
@@ -73,7 +69,6 @@ dependencies {
     api androidx.multidex
     api androidx.recyclerView
     api androidx.material
-
     implementation fresco.fresco
     implementation fresco.frescoGif
     implementation fresco.frescoWebp
@@ -94,6 +89,4 @@ dependencies {
     api jackson.databind
     implementation third.flexible_adapter
     implementation loggerLib.logger
-
-
 }

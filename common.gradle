@@ -10,15 +10,15 @@ ext {
     ]
 
     constraintVer = "1.1.3"
-    multidexVer = "2.0.0"
-    appcompatVer = "1.0.2"
-    vectordrawableVer = "1.0.1"
+    multidexVer = '2.0.1'
+    appcompatVer = '1.1.0-alpha04'
+    vectordrawableVer = '1.1.0-alpha01'
     cardviewVer = "1.0.0"
-    annotationVer = "1.0.0"
-    preferenceVer = "1.1.0-alpha01"
-    constraintlayoutVer = "2.0.0-alpha2"
-    recyclerviewVer = "1.0.0"
-    materialVer = "1.1.0-alpha01"
+    annotationVer = '1.1.0-beta01'
+    preferenceVer = '1.1.0-alpha04'
+    constraintlayoutVer = '2.0.0-alpha5'
+    recyclerviewVer = '1.1.0-alpha04'
+    materialVer = '1.1.0-alpha05'
     legacySupportV4Ver = "1.0.0"
     legacySupportV13Ver = "1.0.0"
     legacyPreferenceV14Ver = "1.0.0"
@@ -39,13 +39,13 @@ ext {
             legacyPreferenceV14: "androidx.legacy:legacy-preference-v14:$legacyPreferenceV14Ver",
     ]
 
-    kotlinVer = '1.2.71'
-    kotlinPluginVer = '1.3.20'
+    kotlinVer = '1.3.31'
+    kotlinPluginVer = '1.3.31'
     kotlin = [
             kotlin_jdk: "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVer",
     ]
 
-    frescoVer = "0.12.0"
+    frescoVer = '1.13.0'
     fresco = [
             fresco        : "com.facebook.fresco:fresco:$frescoVer",
             frescoGif     : "com.facebook.fresco:animated-gif:$frescoVer",
@@ -53,29 +53,29 @@ ext {
             frescoWebpSupp: "com.facebook.fresco:webpsupport:$frescoVer",
     ]
 
-    junitVer = "4.12"
-    runnerVer = "1.1.0"
-    espressoVer = "3.1.0"
+    junitVer = '4.13-beta-2'
+    runnerVer = '1.2.0-alpha04'
+    espressoVer = '3.2.0-alpha04'
     test = [
             junit   : "junit:junit:$junitVer",
             runner  : "androidx.test:runner:$runnerVer",
             espresso: "androidx.test.espresso:espresso-core:$espressoVer",
     ]
 
-    rxJava2Ver = "2.1.9"
-    rxAndroid2Ver = "2.0.2"
+    rxJava2Ver = '2.2.8'
+    rxAndroid2Ver = '2.1.1'
     reactivex = [
             rxjava2   : "io.reactivex.rxjava2:rxjava:$rxJava2Ver",
             rxAndroid2: "io.reactivex.rxjava2:rxandroid:$rxAndroid2Ver",
     ]
 
-    okHttp3Ver = "3.8.0"
-    okioVer = "1.14.0"
-    loggingInterceptorVer = "3.4.1"
-    retrofit2Ver = "2.3.0"
-    converterGsonVer = "2.3.0"
-    adapterRxJava2Ver = "2.3.0"
-    converterJacksonVer = "2.4.0"
+    okHttp3Ver = '3.14.1'
+    okioVer = '2.2.2'
+    loggingInterceptorVer = '3.14.1'
+    retrofit2Ver = '2.5.0'
+    converterGsonVer = '2.5.0'
+    adapterRxJava2Ver = '2.5.0'
+    converterJacksonVer = '2.5.0'
 
     squareup = [
             okhttp3            : "com.squareup.okhttp3:okhttp:$okHttp3Ver",
@@ -86,15 +86,17 @@ ext {
             converter_rxjava2  : "com.squareup.retrofit2:adapter-rxjava2:$adapterRxJava2Ver",
             converter_jackson  : "com.squareup.retrofit2:converter-jackson:$converterJacksonVer",
     ]
-    leakCanaryVer = "1.6.2"
-    debug = [
-            debug_leak_canary         : "com.squareup.leakcanary:leakcanary-android:$leakCanaryVer",
-            release_leak_canary       : "com.squareup.leakcanary:leakcanary-android-no-op:$leakCanaryVer",
-            debug_leak_canary_fragment: "com.squareup.leakcanary:leakcanary-support-fragment:$leakCanaryVer"
+    leakCanaryForAndroidVer = '2.0-alpha-1'
+    leakCanaryForAndroidNoOpVer = '1.6.3'
+    leakCanaryForSupportFragmentVer = '1.6.3'
+    leakcanary = [
+            android         : "com.squareup.leakcanary:leakcanary-android:$leakCanaryForAndroidVer",
+            android_no_op       : "com.squareup.leakcanary:leakcanary-android-no-op:$leakCanaryForAndroidNoOpVer",
+            support_fragment: "com.squareup.leakcanary:leakcanary-support-fragment:$leakCanaryForSupportFragmentVer"
     ]
 
-    guavaVer = "24.0-android"
-    gsonVer = "2.8.2"
+    guavaVer = '27.1-jre'
+    gsonVer = '2.8.5'
     jsr305Ver = "2.0.1"
     google = [
             guava : "com.google.guava:guava:$guavaVer",
@@ -102,7 +104,7 @@ ext {
             jsr305: "com.google.code.findbugs:jsr305:$jsr305Ver",
     ]
 
-    jacksonVer = "2.9.7"
+    jacksonVer = '2.9.8'
     jackson = [
             code       : "com.fasterxml.jackson.core:jackson-core:$jacksonVer",
             annotations: "com.fasterxml.jackson.core:jackson-annotations:$jacksonVer",

@@ -53,13 +53,9 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     testImplementation test.junit
     androidTestImplementation test.runner
     androidTestImplementation test.espresso
-
     implementation project(path: ':common')
-
-
 }
