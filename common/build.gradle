@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-apply from: "$rootDir/common.gradle"
+apply from: "$rootDir/plugins.gradle"
 
 
 android {
@@ -87,6 +87,10 @@ dependencies {
     api jackson.code
     api jackson.annotations
     api jackson.databind
-    implementation third.flexible_adapter
+    implementation libraries.flexible_adapter
     implementation loggerLib.logger
+    api widgets.flipView
+    api widgets.iconicsCore
+    api widgets.iconicsViews
+    api widgets.iconicsCommunity
 }

@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-apply from: "$rootDir/common.gradle"
+apply from: "$rootDir/plugins.gradle"
 
 android {
     compileSdkVersion builder.compileSDK
@@ -54,8 +54,9 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(path: ':common')
     testImplementation test.junit
     androidTestImplementation test.runner
     androidTestImplementation test.espresso
-    implementation project(path: ':common')
+
 }

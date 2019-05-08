@@ -1,10 +1,12 @@
 buildscript {
-    apply from: "$rootDir/common.gradle"
+    apply from: "$rootDir/plugins.gradle"
     ext.build_gradle_version = '3.4.0'
     repositories {
         maven { url 'https://maven.fabric.io/public' }
         maven { url 'https://maven.google.com' }
         maven { url 'https://dl.google.com/dl/android/maven2' }
+        maven { url "http://dl.bintray.com/davideas/maven" }
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
         google()
         mavenCentral()
         jcenter()
@@ -20,6 +22,8 @@ allprojects {
         maven { url 'https://maven.fabric.io/public' }
         maven { url 'https://maven.google.com' }
         maven { url 'https://dl.google.com/dl/android/maven2' }
+        maven { url "http://dl.bintray.com/davideas/maven" }
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
         google()
         mavenCentral()
         jcenter()
